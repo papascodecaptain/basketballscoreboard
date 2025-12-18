@@ -39,3 +39,18 @@ button {
     color:red;
     font-size:100px;
 }
+
+
+#endGame {
+    background-color: #d31717; /* Green background */
+    border: none;
+    margin-top: 30px;
+    color: white; /* White text */
+    padding: 15px 32px; /* Spacing */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+  }

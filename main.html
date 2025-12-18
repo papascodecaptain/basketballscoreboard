@@ -9,24 +9,40 @@
 </head>
 <body>
     
-<div class="teams">
+<!-- <div class="teams">
     <h2>Team 1 </h2>
     <h2>Team 2</h2>
-</div>
+</div> -->
 
 <div class="scoreboard">
 <h1>HOME</h1>
-<div class="score">
-    <p>0</p>
+<div >
+    <p id="score">0</p>
 </div>
-<button class="button1">+1</button>
-<button class="button2">+2</button>
-<button class="button3">+3</button>
-<button class="reset-button">Reset</button>
+<button class="button1" onclick="plus1()">+1</button>
+<button class="button2" onclick="plus2()">+2</button>
+<button class="button3" onclick="plus3()">+3</button>
+<button class="reset-button" onclick="reset()">Reset</button>
 </div>
 
 
+<div class="scoreboard">
+    <h1>AWAY</h1>
+    <div >
+        <p id="scorea">0</p>
+    </div>
+    <button class="button1" onclick="plus1a()">+1</button>
+    <button class="button2" onclick="plus2a()">+2</button>
+    <button class="button3" onclick="plus3a()">+3</button>
+    <button class="reset-button" onclick="reseta()">Reset</button>
+    </div>
 
-    
+
+    <button id="endGame">END GAME</button>
+
+
+  <script src="script.js">
+
+  </script>  
 </body>
 </html>
