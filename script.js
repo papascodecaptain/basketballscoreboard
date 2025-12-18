@@ -51,3 +51,13 @@ function reseta(){
     count = 0
     countEla.textContent = count
 }
+
+
+function goToNewPage() {
+    window.location.href = "players.html"; // Redirects to a local file
+}
+
+
+function goToPlay() {
+    window.location.href = "main.html"; // Redirects to a local file
+}
