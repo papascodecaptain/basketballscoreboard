@@ -11,8 +11,8 @@ if (document.getElementById("home-display")) {
     const savedT1 = localStorage.getItem("team1Name");
     const savedT2 = localStorage.getItem("team2Name");
     
-    if (savedT1) document.getElementById("home-display").textContent = savedT1;
-    if (savedT2) document.getElementById("away-display").textContent = savedT2;
+    if (savedT1) document.getElementById("home-display").textContent = savedT1.toUpperCase();
+    if (savedT2) document.getElementById("away-display").textContent = savedT2.toUpperCase();
 }
 
 // --- FIXED: GO TO PLAY FUNCTION ---
@@ -29,7 +29,9 @@ function goToPlay() {
     window.location.href = "main.html";
 }
 
-
+function goToPlayers(){
+    window.location.href ="players.html"
+}
 
 // --- SCORE FUNCTIONS ---
 function plus1() { homeScore += 1; homeEl.textContent = homeScore; }

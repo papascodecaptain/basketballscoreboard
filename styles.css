@@ -126,6 +126,19 @@ body {
     gap: 8px;
 }
 
+
+#reset-button{
+        background-color: rgba(165, 223, 255, 0.755); 
+    color: #343434;
+    border: none;
+    padding: 10px;
+    flex: 1;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 .scoreboard button {
     background-color: white; 
     color: #343434;
@@ -162,7 +175,7 @@ body {
 }
 
 #endGame:hover {
-    background-color: #c43a3a;
+    background-color: #c43a3abd;
     border: solid 1px white;
     margin-top: 50px;
     color: white;
