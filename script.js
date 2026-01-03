@@ -55,9 +55,27 @@ function reseta(){
 
 function goToNewPage() {
     window.location.href = "players.html"; // Redirects to a local file
+
+        let message = "";
+
+    // Compare the scores to determine the winner
+    if (homeScore > awayScore) {
+        message = "🏆 HOME WINS! " + homeScore + " to " + awayScore;
+    } else if (awayScore > homeScore) {
+        message = "🏆 AWAY WINS! " + awayScore + " to " + homeScore;
+    } else {
+        message = "🤝 IT'S A TIE! " + homeScore + " to " + awayScore;
+    }
+
+    // Show the pop-up
+    alert(message);
+
+    // Redirect to the players menu
+    window.location.href = "players.html"; 
 }
 
 
 function goToPlay() {
     window.location.href = "main.html"; // Redirects to a local file
 }
+

@@ -3,35 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketcounter</title>
+    <title>Basketcounter - Players</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png">
 </head>
 <body>
-
-  <div class="container">
-    <img src="BasketC0unter.png" alt="app-logo">
-</div>
-
     <div class="container"> 
-<h1>Who's Playing</h1>
+        <!-- <img src="BasketC0unter.png" alt="app-logo" class="main-logo"> -->
 
-<div class="player-input">
-<h2>Team 1 </h2>
-<form action="#">
-<input type="text" id="fname" name="fname"><br><br>
-  </form>
+        
+
+        <div class="setup-area">
+            
+       <div class="player-input">
+    
+    <input type="text" id="team1Name" placeholder="Enter Team 1 Name">
 </div>
 
 <div class="player-input">
-    <h2>Team 2 </h2>
-    <form action="#">
-    <input type="text" id="fname" name="fname"><br><br>
-      </form>
-    </div>
+   
+    <input type="text" id="team2Name" placeholder="Enter Team 2 Name">
+</div>
 
-<button id="startGame" onclick="goToPlay()">Start Game</button>
-</div>   
-    
+        <button id="startGame" onclick="goToPlay()">Start Game</button>
+    </div>   
 </body>
 </html>
