@@ -10,7 +10,6 @@
 <body>
   <img class="main-logo"src="BasketC0unter.png" alt="app-logo">
     <div class="container"> 
-        <!-- <h1 id="header">Who's Playing?</h1> -->
 
         <div class="setup-area">
             <div class="player-input">
@@ -22,6 +21,17 @@
                 
                 <input type="text" id="team2Input" placeholder="Team 2 ">
             </div>
+
+    <div class="timer-setup">
+        <label for="timeInput">Game Duration:</label>
+        <select id="timeInput">
+            <option value="1">1 Minute</option>
+            <option value="5">5 Minutes</option>
+            <option value="10" selected>10 Minutes</option>
+            <option value="12">12 Minutes</option>
+            <option value="20">20 Minutes</option>
+        </select>
+    </div>
         </div> <button id="startGame" onclick="goToPlay()">Let's Play</button>
     </div>   
     <script src="script.js"></script>

@@ -18,8 +18,13 @@ if (document.getElementById("home-display")) {
 // --- FIXED: GO TO PLAY FUNCTION ---
 function goToPlay() {
     // 1. Get values from the inputs in players.html
-    const t1 = document.getElementById("team1Input").value;
-    const t2 = document.getElementById("team2Input").value;
+const t1 = document.getElementById("team1Input").value.trim();
+    const t2 = document.getElementById("team2Input").value.trim();
+
+    if (t1 === "" || t2 === "") {
+        alert("Please enter names for both teams!");
+        return; // Stops the function from moving to main.html
+    }
 
     // 2. Save names to memory so main.html can find them
     localStorage.setItem("team1Name", t1 || "HOME");
@@ -83,4 +88,52 @@ function triggerPop(element) {
     element.classList.remove("pop-animation"); // Reset the animation
     void element.offsetWidth; // This is a "magic" line that forces the browser to restart the animation
     element.classList.add("pop-animation");
+}
+
+let timer;
+let timeLeft;
+let isTimerRunning = false;
+
+// 1. Setup the clock based on user choice from players.html
+if (document.getElementById("timer-display")) {
+    const minutes = parseInt(localStorage.getItem("gameTime")) || 10;
+    timeLeft = minutes * 60;
+    updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    document.getElementById("timer-display").textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+}
+
+// 2. The Smart Button Logic
+function handleTimerButton() {
+    const btn = document.getElementById("endGame");
+
+    // If time is up, the button acts as the FINAL "END GAME" trigger
+    if (timeLeft <= 0) {
+        goToNewPage();
+        return;
+    }
+
+    if (isTimerRunning) {
+        // PAUSE
+        clearInterval(timer);
+        btn.textContent = "RESUME GAME";
+        btn.style.backgroundColor = "transparent"; 
+    } else {
+        // START
+        timer = setInterval(() => {
+            timeLeft--;
+            updateTimerDisplay();
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                btn.textContent = "FINISH GAME"; // Change text when done
+                btn.style.backgroundColor = "#c43a3abd"; // Turn red to signal end
+            }
+        }, 1000);
+        btn.textContent = "PAUSE GAME";
+    }
+    isTimerRunning = !isTimerRunning;
 }

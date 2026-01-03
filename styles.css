@@ -153,7 +153,7 @@ body {
 }
 
 .scoreboard button:hover {
-    background-color: rgb(105, 179, 68); 
+    background-color: rgb(228, 226, 226); 
     color: #343434;
     border: none;
     padding: 10px;
@@ -176,7 +176,7 @@ body {
 }
 
 #endGame:hover {
-    background-color: #c43a3abd;
+    background-color: #26b816bd;
     border: solid 1px white;
     margin-top: 50px;
     color: white;
@@ -234,6 +234,10 @@ body {
     z-index: 1000;
 }
 
+
+#timer-display{
+    font-size: 3em;
+}
 .overlay-box {
     background: #444;
     padding: 40px;
@@ -279,4 +283,22 @@ body {
     border-radius: 15px;
     border: 3px solid rgb(105, 179, 68);
     text-align: center;
+}
+
+#manual-end {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    padding: 8px 20px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#manual-end:hover {
+    color: white;
+    border-color: white;
+    background-color: rgba(255, 0, 0, 0.2); /* Slight red tint on hover */
 }
