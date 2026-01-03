@@ -1,81 +1,59 @@
+// NOTE: Use separate variables for Home and Away so scores don't overlap
+let homeScore = 0;
+let awayScore = 0;
 
-let countEl = document.getElementById("score")
-let countEla = document.getElementById("scorea")
-let count = 0 
+let homeEl = document.getElementById("score");
+let awayEl = document.getElementById("scorea");
 
-function plus1(){
-    count += 1 
-    countEl.textContent = count
+// --- DATA PERSISTENCE: RUNS ON MAIN.HTML LOAD ---
+// This checks if we are on the scoreboard page and updates names
+if (document.getElementById("home-display")) {
+    const savedT1 = localStorage.getItem("team1Name");
+    const savedT2 = localStorage.getItem("team2Name");
+    
+    if (savedT1) document.getElementById("home-display").textContent = savedT1;
+    if (savedT2) document.getElementById("away-display").textContent = savedT2;
 }
 
+// --- FIXED: GO TO PLAY FUNCTION ---
+function goToPlay() {
+    // 1. Get values from the inputs in players.html
+    const t1 = document.getElementById("team1Input").value;
+    const t2 = document.getElementById("team2Input").value;
 
+    // 2. Save names to memory so main.html can find them
+    localStorage.setItem("team1Name", t1 || "HOME");
+    localStorage.setItem("team2Name", t2 || "AWAY");
 
-function plus2(){
-    count += 2 
-    countEl.textContent = count
+    // 3. Now move to the game page
+    window.location.href = "main.html";
 }
 
+// --- SCORE FUNCTIONS ---
+function plus1() { homeScore += 1; homeEl.textContent = homeScore; }
+function plus2() { homeScore += 2; homeEl.textContent = homeScore; }
+function plus3() { homeScore += 3; homeEl.textContent = homeScore; }
+function reset() { homeScore = 0; homeEl.textContent = homeScore; }
 
-function plus3(){
-    count += 3 
-    countEl.textContent = count
-}
+function plus1a() { awayScore += 1; awayEl.textContent = awayScore; }
+function plus2a() { awayScore += 2; awayEl.textContent = awayScore; }
+function plus3a() { awayScore += 3; awayEl.textContent = awayScore; }
+function reseta() { awayScore = 0; awayEl.textContent = awayScore; }
 
-
-function reset(){
-    count = 0
-    countEl.textContent = count
-}
-
-
-function plus1a(){
-    count += 1 
-    countEla.textContent = count
-}
-
-
-
-function plus2a(){
-    count += 2 
-    countEla.textContent = count
-}
-
-
-function plus3a(){
-    count += 3 
-    countEla.textContent = count
-}
-
-
-function reseta(){
-    count = 0
-    countEla.textContent = count
-}
-
-
+// --- FIXED: END GAME LOGIC ---
 function goToNewPage() {
-    window.location.href = "players.html"; // Redirects to a local file
+    const t1Name = localStorage.getItem("team1Name") || "HOME";
+    const t2Name = localStorage.getItem("team2Name") || "AWAY";
+    let message = "";
 
-        let message = "";
-
-    // Compare the scores to determine the winner
     if (homeScore > awayScore) {
-        message = "🏆 HOME WINS! " + homeScore + " to " + awayScore;
+        message = `🏆 ${t1Name} WINS! ${homeScore} to ${awayScore}`;
     } else if (awayScore > homeScore) {
-        message = "🏆 AWAY WINS! " + awayScore + " to " + homeScore;
+        message = `🏆 ${t2Name} WINS! ${awayScore} to ${homeScore}`;
     } else {
-        message = "🤝 IT'S A TIE! " + homeScore + " to " + awayScore;
+        message = `🤝 IT'S A TIE! ${homeScore} to ${awayScore}`;
     }
 
-    // Show the pop-up
-    alert(message);
-
-    // Redirect to the players menu
-    window.location.href = "players.html"; 
+    alert(message); // Show pop-up first
+    window.location.href = "players.html"; // Then redirect
 }
-
-
-function goToPlay() {
-    window.location.href = "main.html"; // Redirects to a local file
-}
-
