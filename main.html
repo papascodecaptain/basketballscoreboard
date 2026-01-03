@@ -14,10 +14,10 @@
             <h1 id="home-display">HOME</h1>
             <div id="score">0</div>
             <div class="button-group">
-                <button onclick="plus1()">+1</button>
-                <button onclick="plus2()">+2</button>
-                <button onclick="plus3()">+3</button>
-                <button onclick="reset()" id="reset-button">reset</button>
+     <button onclick="handleScore('home', 1)">+1</button>
+                <button onclick="handleScore('home', 2)">+2</button>
+                <button onclick="handleScore('home', 3)">+3</button>
+                <button onclick="handleScore('home', 0)">reset</button>
             </div>
         </div>
 
@@ -25,16 +25,27 @@
             <h1 id="away-display">AWAY</h1>
             <div id="scorea">0</div>
             <div class="button-group">
-                <button onclick="plus1a()">+1</button>
-                <button onclick="plus2a()">+2</button>
-                <button onclick="plus3a()">+3</button>
-                <button onclick="reseta()" id="reset-button">reset</button>
+            
+
+                <button onclick="handleScore('away', 1)">+1</button>
+                <button onclick="handleScore('away', 2)">+2</button>
+                <button onclick="handleScore('away', 3)">+3</button>
+                <button onclick="handleScore('away', 0)" >reset</button>
+            
             </div>
         </div>
     </div>
 
     <button id="endGame" onclick="goToNewPage()">END GAME</button>
-
+<div id="winner-screen" class="overlay-hidden">
+    <div class="overlay-box">
+        <h1 id="victory-text">TEAM WINS!</h1>
+        <div class="overlay-buttons">
+            <button onclick="location.reload()">New Game</button>
+            <button onclick="window.location.href='load.html'">Exit</button>
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>  
 </body>
 </html>

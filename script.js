@@ -34,30 +34,38 @@ function goToPlayers(){
 }
 
 // --- SCORE FUNCTIONS ---
-function plus1() { homeScore += 1; homeEl.textContent = homeScore; }
-function plus2() { homeScore += 2; homeEl.textContent = homeScore; }
-function plus3() { homeScore += 3; homeEl.textContent = homeScore; }
-function reset() { homeScore = 0; homeEl.textContent = homeScore; }
+function handleScore(team, points) {
+    if (team === 'home') {
+        // If points is 0, it's a reset. Otherwise, add the points.
+        homeScore = (points === 0) ? 0 : homeScore + points;
+        homeEl.textContent = homeScore;
+        triggerPop(homeEl); // We will build this next!
+    } else {
+        awayScore = (points === 0) ? 0 : awayScore + points;
+        awayEl.textContent = awayScore;
+        triggerPop(awayEl);
+    }
+}
 
-function plus1a() { awayScore += 1; awayEl.textContent = awayScore; }
-function plus2a() { awayScore += 2; awayEl.textContent = awayScore; }
-function plus3a() { awayScore += 3; awayEl.textContent = awayScore; }
-function reseta() { awayScore = 0; awayEl.textContent = awayScore; }
-
-// --- FIXED: END GAME LOGIC ---
 function goToNewPage() {
     const t1Name = localStorage.getItem("team1Name") || "HOME";
     const t2Name = localStorage.getItem("team2Name") || "AWAY";
-    let message = "";
+    const screen = document.getElementById("winner-screen");
+    const text = document.getElementById("victory-text");
 
     if (homeScore > awayScore) {
-        message = `🏆 ${t1Name} WINS! ${homeScore} to ${awayScore}`;
+        text.textContent = `🏆 ${t1Name.toUpperCase()} WINS!`;
     } else if (awayScore > homeScore) {
-        message = `🏆 ${t2Name} WINS! ${awayScore} to ${homeScore}`;
+        text.textContent = `🏆 ${t2Name.toUpperCase()} WINS!`;
     } else {
-        message = `🤝 IT'S A TIE! ${homeScore} to ${awayScore}`;
+        text.textContent = "ITS A TIE! 🤝";
     }
 
-    alert(message); // Show pop-up first
-    window.location.href = "players.html"; // Then redirect
+    screen.style.display = "flex"; // Show the overlay
+}
+
+function triggerPop(element) {
+    element.classList.remove("pop-animation"); // Reset the animation
+    void element.offsetWidth; // This is a "magic" line that forces the browser to restart the animation
+    element.classList.add("pop-animation");
 }
