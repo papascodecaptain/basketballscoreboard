@@ -24,22 +24,53 @@ button {
 
 .container{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
 }
 
-
-.score{
-    background-color: white;
-    width: 200px;
-    height: 200px;
-    color:red;
-    font-size:100px;
+h1{
+    text-align: center;
 }
 
+#score{
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    color:rgb(38, 13, 13);
+    font-size:100px;
+    text-align: center;
+}
+
+#scorea{
+    background-color: rgba(255, 255, 255, 0.853);
+    width: 400px;
+    height: 200px;
+    color:rgb(36, 35, 35);
+    font-size:100px;
+    text-align: center;
+}
+
+body{
+     display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: fit-content;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+}
+.scoreboard{
+    padding:10px;
+    border:solid 1px ;
+    width: 400px;
+    border-radius: 0%;
+    background-color: #5b5a5a;
+
+}
 
 #endGame {
     background-color: #d31717; /* Green background */
