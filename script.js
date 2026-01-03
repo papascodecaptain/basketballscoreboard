@@ -1,4 +1,4 @@
-// NOTE: Use separate variables for Home and Away so scores don't overlap
+//Variables for Home and Away so scores don't overlap
 let homeScore = 0;
 let awayScore = 0;
 
@@ -28,6 +28,8 @@ function goToPlay() {
     // 3. Now move to the game page
     window.location.href = "main.html";
 }
+
+
 
 // --- SCORE FUNCTIONS ---
 function plus1() { homeScore += 1; homeEl.textContent = homeScore; }

@@ -18,12 +18,13 @@ body {
     align-items: center;
     width: 100%;
     text-align: center;
+    margin-bottom: 4em;
 }
 
 
 .main-logo {
     max-width: 400px;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 /* --- Players Styling --- */
 
@@ -60,8 +61,8 @@ body {
 }
 
 #startGame {
-    background-color: #538d4e; 
-    border: none;
+    background-color: #538d4e00; 
+   border: solid 1px white;
     color: white;
     padding: 15px 60px;
     font-size: 16px;
@@ -72,7 +73,7 @@ body {
 }
 #startGame:hover {
     background-color: #6ca867; 
-    border: none;
+    border: solid 1px white;
     color: white;
     padding: 15px 60px;
     font-size: 16px;
@@ -103,10 +104,6 @@ body {
     padding: 10px;
     width: 300px;
     text-align: center;
-}
-
-.home-display{
-    text-transform: uppercase;
 }
 
 #score, #scorea {
@@ -141,9 +138,32 @@ body {
     border-radius: 4px;
 }
 
-#endGame {
-    background-color: #d31717;
+.scoreboard button:hover {
+    background-color: rgb(105, 179, 68); 
+    color: #343434;
     border: none;
+    padding: 10px;
+    flex: 1;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#endGame {
+    background-color: #f7f7f700;
+    border: solid 1px rgba(255, 255, 255, 0.363);
+    margin-top: 50px;
+    color: white;
+    padding: 15px 60px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+#endGame:hover {
+    background-color: #c43a3a;
+    border: solid 1px white;
     margin-top: 50px;
     color: white;
     padding: 15px 60px;
