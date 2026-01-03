@@ -47,6 +47,7 @@ function handleScore(team, points) {
     }
 }
 
+// Show the overlay
 function goToNewPage() {
     const t1Name = localStorage.getItem("team1Name") || "HOME";
     const t2Name = localStorage.getItem("team2Name") || "AWAY";
@@ -61,7 +62,21 @@ function goToNewPage() {
         text.textContent = "ITS A TIE! 🤝";
     }
 
-    screen.style.display = "flex"; // Show the overlay
+    screen.style.display = "flex"; // This makes it visible
+}
+
+// Function for the 'New Game' button
+function resetGame() {
+    homeScore = 0;
+    awayScore = 0;
+    homeEl.textContent = 0;
+    awayEl.textContent = 0;
+    document.getElementById("winner-screen").style.display = "none"; // Hide overlay
+}
+
+// Function for the 'Exit' button
+function exitToMenu() {
+    window.location.href = "load.html";
 }
 
 function triggerPop(element) {
