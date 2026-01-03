@@ -1,4 +1,4 @@
-/* General Layout */
+/* --- General Styling --- */
 body {
     background-color: #343434;
     color: #fafafa;
@@ -20,20 +20,27 @@ body {
     text-align: center;
 }
 
-/* --- Players Menu Styling --- */
+
 .main-logo {
-    max-width: 500px;
-    margin-bottom: 40px;
+    max-width: 400px;
+    margin-bottom: 3em;
+}
+/* --- Players Styling --- */
+
+#header{
+    margin-bottom: 1em;
+    font-size: 36px;
+    font-weight: 200;
 }
 
 .setup-area {
     display: flex;
     flex-direction: row;
-    gap: 80px;
+    gap: 1em;
     margin-bottom: 40px;
 }
 
-/* Updated to make Label and Input horizontal */
+
 .player-input {
     display: flex;
     flex-direction: row;
@@ -41,12 +48,6 @@ body {
     gap: 15px;
 }
 
-.player-input h2 {
-    font-size: 18px;
-    text-transform: uppercase;
-    margin: 0; /* Removed margin to align perfectly with input */
-    white-space: nowrap;
-}
 
 .player-input input {
     width: 280px;
@@ -55,10 +56,22 @@ body {
     border-radius: 4px;
     font-size: 18px;
     padding: 0 15px;
+    text-transform: uppercase;
 }
 
 #startGame {
     background-color: #538d4e; 
+    border: none;
+    color: white;
+    padding: 15px 60px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+#startGame:hover {
+    background-color: #6ca867; 
     border: none;
     color: white;
     padding: 15px 60px;
@@ -90,6 +103,10 @@ body {
     padding: 10px;
     width: 300px;
     text-align: center;
+}
+
+.home-display{
+    text-transform: uppercase;
 }
 
 #score, #scorea {
