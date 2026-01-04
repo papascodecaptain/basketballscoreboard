@@ -6,6 +6,16 @@
     <title>Basketcounter</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png">
+
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#343434">
+
+<script>
+  // Register the service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
 </head>
 <body>
       <!-- <img class="main-logo"src="BasketC0unter.png" alt="app-logo"> -->
@@ -47,10 +57,11 @@
         <h1 id="victory-text">TEAM WINS!</h1>
         <div class="overlay-buttons">
             <button onclick="location.reload()">New Game</button>
-            <button onclick="window.location.href='load.html'">Exit</button>
+            <button onclick="window.location.href='index.html'">Exit</button>
         </div>
     </div>
 </div>
+
     <script src="script.js"></script>  
 </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "name": "Basketcounter Scoreboard",
+  "short_name": "Basketcounter",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#343434",
+  "theme_color": "#343434",
+  "icons": [
+    {
+      "src": "Favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
