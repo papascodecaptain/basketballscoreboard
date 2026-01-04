@@ -17,20 +17,32 @@ if (document.getElementById("home-display")) {
 
 // --- FIXED: GO TO PLAY FUNCTION ---
 function goToPlay() {
-    // 1. Get values from the inputs in players.html
-const t1 = document.getElementById("team1Input").value.trim();
+    // 1. Get values from the inputs
+    const t1 = document.getElementById("team1Input").value.trim();
     const t2 = document.getElementById("team2Input").value.trim();
+    
+    // ADD THIS LINE: Get the selected time from the dropdown
+    const selectedTime = document.getElementById("timeInput").value;
 
     if (t1 === "" || t2 === "") {
         alert("Please enter names for both teams!");
-        return; // Stops the function from moving to main.html
+        return; 
+    }
+    
+    // OPTIONAL: Check if a time was actually selected
+    if (selectedTime === " ") {
+        alert("Please select a game duration!");
+        return;
     }
 
-    // 2. Save names to memory so main.html can find them
+    // 2. Save names AND the time to memory
     localStorage.setItem("team1Name", t1 || "HOME");
     localStorage.setItem("team2Name", t2 || "AWAY");
+    
+    // ADD THIS LINE: Save the game time
+    localStorage.setItem("gameTime", selectedTime);
 
-    // 3. Now move to the game page
+    // 3. Move to the game page
     window.location.href = "main.html";
 }
 
