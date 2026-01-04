@@ -21,17 +21,19 @@
                 
                 <input type="text" id="team2Input" placeholder="Team 2 ">
             </div>
-
-    <div class="timer-setup">
-        <label for="timeInput">Game Duration:</label>
+<div class="timer-setup">
         <select id="timeInput">
+            <option value=" " selected>Select Time</option>
             <option value="1">1 Minute</option>
             <option value="5">5 Minutes</option>
-            <option value="10" selected>10 Minutes</option>
+            <option value="10" >10 Minutes</option>
             <option value="12">12 Minutes</option>
             <option value="20">20 Minutes</option>
+            <option value="45">45 Minutes</option>
         </select>
     </div>
+
+    
         </div> <button id="startGame" onclick="goToPlay()">Let's Play</button>
     </div>   
     <script src="script.js"></script>
